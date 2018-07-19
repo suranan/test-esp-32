@@ -87,6 +87,33 @@ app.post('/DupCheck', (req, res) => {
   }
 });
 
+app.post('/CheckDup_UserID', (req, res) => {
+  try {
+
+    let UserID = req.query.UserID;
+
+    let sql = "SELECT count(1) as count  FROM `user_info` WHERE `UserID`='" + UserID + "'; "
+    console.lo
+
+    pool.query(sql, (err, rows) => {
+      if (!err) {
+        console.log(rows[0].count)
+        if (rows[0].count == 0) {
+          console.log('success');
+          res.send('success');
+        } else {
+          console.log('error');
+          res.send('error');
+        }
+      }
+    });
+
+  } catch (e) {
+    console.log(e);
+    res.send('error');
+  }
+});
+
 
 app.post('/update', (req, res) => {
   try {
@@ -95,7 +122,7 @@ app.post('/update', (req, res) => {
     let Amount = req.query.Amount;
 
     let sql = "UPDATE `00_Passcode_Money`  SET  `Passcode` = '" + Passcode + "',  `Amount` = '" + Amount + "'  WHERE `TagID` ='" + TagID + "' ;  ";
-console.log(sql);
+    console.log(sql);
     pool.query(sql, (err, rows) => {
       if (!err) {
         res.send('success');
@@ -118,6 +145,100 @@ app.post('/return', (req, res) => {
     pool.query(sql, (err, rows) => {
       if (!err) {
         res.send('success');
+      }
+    });
+  } catch (e) {
+    res.send('error');
+  }
+
+});
+
+app.post('/registerUser', (req, res) => {
+  try {
+
+    let UserID = req.query.UserID;
+    let Name = req.query.Name;
+    let DateofBirth = req.query.DateofBirth;
+    let Sex = req.query.Sex;
+    let Tel = req.query.Tel;
+    let Address = req.query.Address;
+
+    let TagID = req.query.TagID;
+    let NodeID = req.query.NodeID;
+
+    let sql = "INSERT INTO `User_Info`  (`UserID`, `Name`, `DateofBirth`, `Sex`, `Tel`, `Address`)  VALUES  ('" + UserID + "',  '" + Name + "',  '" + DateofBirth + "',  '" + Sex + "',  '" + Tel + "',  '" + Address + "'); "
+    //  let sql2 = "INSERT INTO `log`  (`UserID`, `TagID`, `Timestamp`, `NodeID`)  VALUES  ('" + UserID + "',  '" + TagID + "',  now(),  '" + NodeID + "'); "
+    console.log(sql);
+    pool.query(sql, (err, rows) => {
+      if (!err) {
+        //    pool.query(sql2, (err, rows) => {
+        //      if (!err) {
+        res.send('success');
+        //      }
+        //    });
+      } else {
+        console.log(err);
+      }
+    });
+  } catch (e) {
+    console.log(e);
+    res.send('error');
+  }
+
+});
+
+
+app.post('/user-update', (req, res) => {
+  try {
+
+    let UserID = req.query.UserID;
+    let Name = req.query.Name;
+    let DateofBirth = req.query.DateofBirth;
+    let Sex = req.query.Sex;
+    let Tel = req.query.Tel;
+    let Address = req.query.Address;
+
+    // let TagID = req.query.TagID;
+    // let NodeID = req.query.NodeID;
+
+    let sql = "UPDATE `User_Info`  SET `Name` = '" + Name + "',`DateofBirth` = '" + DateofBirth + "',`Sex` = '" + Sex + "',`Tel` = '" + Tel + "',  `Address` = '" + Address + "'  WHERE `UserID` ='" + UserID + "' ;  ";
+    // let sql2 = "INSERT INTO `log`  (`UserID`, `TagID`, `Timestamp`, `NodeID`)  VALUES  ('" + UserID + "',  '" + TagID + "',  now(),  '" + NodeID + "'); "
+
+    pool.query(sql, (err, rows) => {
+      if (!err) {
+        //     pool.query(sql2, (err, rows) => {
+        //       if (!err) {
+        res.send('success');
+        //      }
+        //    });
+
+      } else {
+        console.log(err);
+      }
+    });
+  } catch (e) {
+    res.send('error');
+  }
+
+});
+
+
+
+app.post('/CheckOLD_UserID', (req, res) => {
+  try {
+
+    let UserID = req.query.UserID;
+
+    let sql = "SELECT * FROM `User_Info`  WHERE `UserID` ='" + UserID + "' ;  ";
+    console.log(sql);
+    pool.query(sql, (err, rows) => {
+      if (!err) {     
+        console.log(rows);
+        res.send("*************************\nข้อมูลเดิม\n*************************\nUserID : "+rows[0].UserID+"\nName : "+rows[0].Name+"\nDateofBirth : "+rows[0].DateofBirth+"\nSex : "+rows[0].Sex+"\nTel : "+rows[0].Tel+"\nAddress : "+rows[0].Address+"\n*************************");
+
+      } else {
+        console.log(err);
+        res.send("error");
       }
     });
   } catch (e) {
