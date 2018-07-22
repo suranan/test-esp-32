@@ -38,7 +38,7 @@ app.post('/topup', (req, res) => {
   let Lock_n = req.query.Lock_n;
 
   let sql_count = "SELECT count(1) as count  FROM `Money_Control` WHERE `TagID`='" + TagID + "'; "
-  let sql_insert = "INSERT INTO `Money_Control`  (`TagID`,  `UserID`,  `Passcode`,  `Amount`,  `Lock_n`)  VALUES  ('" + TagID + "',  '" + UserID + "',  '" + Passcode + "',  '" + Amount + "',  '0');  "
+  let sql_insert = "INSERT INTO `Money_Control`  (`TagID`,  `UserID`,  `Passcode`,  `Amount`,  `Lock_n`)  VALUES  ('" + TagID + "',  '" + UserID + "',  '" + Passcode + "',  '" + Lock_n + "',  '0');  "
   let sql_update = "UPDATE Money_Control`  SET  `UserID` = '" + UserID + "',  `Passcode` = '" + Passcode + "',  `Amount` = '" + Amount + "'  WHERE `TagID` = '" + TagID + "'";
 
   try {
