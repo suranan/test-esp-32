@@ -27,224 +27,165 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => res.send('Hello World!'))
-app.post('/test', (req, res) => {
-  console.log(req.query.username);
-  res.send('Hello World!: ' + req.query.username);
+app.get('/', (req, res) => res.send('Hello World!'));
 
-  let sql = "SELECT * FROM employees;"
+app.post('/topup', (req, res) => {
 
-  pool.query(sql, (err, rows) => {
-    if (err) throw err;
+  let TagID = req.query.TagID;
+  let UserID = req.query.UserID;
+  let Passcode = req.query.Passcode;
+  let Amount = req.query.Amount;
+  let Lock_n = req.query.Lock_n;
 
-    console.log('Data received from Db:\n');
-    console.log(rows);
-  });
+  let sql_count = "SELECT count(1) as count  FROM `Money_Control` WHERE `TagID`='" + TagID + "'; "
+  let sql_insert = "INSERT INTO `Money_Control`  (`TagID`,  `UserID`,  `Passcode`,  `Amount`,  `Lock_n`)  VALUES  ('" + TagID + "',  '" + UserID + "',  '" + Passcode + "',  '" + Amount + "',  '0');  "
+  let sql_update = "UPDATE Money_Control`  SET  `UserID` = '" + UserID + "',  `Passcode` = '" + Passcode + "',  `Amount` = '" + Amount + "'  WHERE `TagID` = '" + TagID + "'";
 
-
-});
-
-app.post('/register', (req, res) => {
   try {
-
-    let TagID = req.query.TagID;
-    let Passcode = req.query.Passcode;
-    let Amount = req.query.Amount;
-
-    let sql = "INSERT INTO `00_Passcode_Money`  (`TagID`,  `Passcode`,  `Amount`)  VALUES  ('" + TagID + "',  '" + Passcode + "',  '" + Amount + "'); "
-
-    pool.query(sql, (err, rows) => {
-      if (!err) {
-        res.send('success');
-      }
-    });
-
-  } catch (e) {
-    res.send('error');
-  }
-});
-
-
-app.post('/DupCheck', (req, res) => {
-  try {
-
-    let TagID = req.query.TagID;
-
-    let sql = "SELECT count(1) as count  FROM `00_Passcode_Money` WHERE `TagID`='" + TagID + "'; "
-
-    pool.query(sql, (err, rows) => {
-      if (!err) {
-        if (rows[0].count == 0) {
-          res.send('success');
+    pool.query(sql_count, (err_count, rows_count) => {
+      if (!err_count) {
+        if (rows_count[0].count == 0) {
+          pool.query(sql_insert, (err_insert, rows_insert) => {
+            if (!err_insert) {
+              res.send('success');
+            } else {
+              res.send('error');
+            }
+          });
         } else {
-          res.send('error');
+          pool.query(sql_update, (err_update, rows_update) => {
+            if (!err_update) {
+              res.send('success');
+            } else {
+              res.send('error');
+            }
+          });
         }
-      }
-    });
-
-  } catch (e) {
-    res.send('error');
-  }
-});
-
-app.post('/CheckDup_UserID', (req, res) => {
-  try {
-
-    let UserID = req.query.UserID;
-
-    let sql = "SELECT count(1) as count  FROM `user_info` WHERE `UserID`='" + UserID + "'; "
-    console.lo
-
-    pool.query(sql, (err, rows) => {
-      if (!err) {
-        console.log(rows[0].count)
-        if (rows[0].count == 0) {
-          console.log('success');
-          res.send('success');
-        } else {
-          console.log('error');
-          res.send('error');
-        }
-      }
-    });
-
-  } catch (e) {
-    console.log(e);
-    res.send('error');
-  }
-});
-
-
-app.post('/update', (req, res) => {
-  try {
-    let TagID = req.query.TagID;
-    let Passcode = req.query.Passcode;
-    let Amount = req.query.Amount;
-
-    let sql = "UPDATE `00_Passcode_Money`  SET  `Passcode` = '" + Passcode + "',  `Amount` = '" + Amount + "'  WHERE `TagID` ='" + TagID + "' ;  ";
-    console.log(sql);
-    pool.query(sql, (err, rows) => {
-      if (!err) {
-        res.send('success');
       }
     });
   } catch (e) {
     console.log(e);
     res.send('error');
   }
-
 });
 
 
 app.post('/return', (req, res) => {
+
+  let TagID = req.query.TagID;
+
+  let sql_select = "SELECT *  FROM `Money_Control` WHERE `TagID`='" + TagID + "'; "
+
+  let sql_update = "UPDATE Money_Control`  SET   `Amount` = '0',     WHERE `TagID` = '" + TagID + "'";
+
   try {
-    let TagID = req.query.TagID;
-
-    let sql = "UPDATE `00_Passcode_Money`  SET  `Passcode` = '0000',  `Amount` = '0'  WHERE `TagID` ='" + TagID + "' ;  ";
-    console.log(sql);
-    pool.query(sql, (err, rows) => {
-      if (!err) {
-        res.send('success');
-      }
-    });
-  } catch (e) {
-    res.send('error');
-  }
-
-});
-
-app.post('/registerUser', (req, res) => {
-  try {
-
-    let UserID = req.query.UserID;
-    let Name = req.query.Name;
-    let DateofBirth = req.query.DateofBirth;
-    let Sex = req.query.Sex;
-    let Tel = req.query.Tel;
-    let Address = req.query.Address;
-
-    let TagID = req.query.TagID;
-    let NodeID = req.query.NodeID;
-
-    let sql = "INSERT INTO `User_Info`  (`UserID`, `Name`, `DateofBirth`, `Sex`, `Tel`, `Address`)  VALUES  ('" + UserID + "',  '" + Name + "',  '" + DateofBirth + "',  '" + Sex + "',  '" + Tel + "',  '" + Address + "'); "
-    //  let sql2 = "INSERT INTO `log`  (`UserID`, `TagID`, `Timestamp`, `NodeID`)  VALUES  ('" + UserID + "',  '" + TagID + "',  now(),  '" + NodeID + "'); "
-    console.log(sql);
-    pool.query(sql, (err, rows) => {
-      if (!err) {
-        //    pool.query(sql2, (err, rows) => {
-        //      if (!err) {
-        res.send('success');
-        //      }
-        //    });
+    pool.query(sql_select, (err_select, rows_select) => {
+      if (!err_select) {
+        pool.query(sql_update, (err_update, rows_update) => {
+          if (!err_update) {
+            res.send(rows_select[0].Amount + 'is returned');
+          } else {
+            res.send('error');
+          }
+        });
       } else {
-        console.log(err);
+        res.send('error');
       }
     });
   } catch (e) {
     console.log(e);
     res.send('error');
   }
-
 });
 
 
-app.post('/user-update', (req, res) => {
+app.post('/pay', (req, res) => {
+
+  let TagID = req.query.TagID;
+  let Passcode = req.query.Passcode;
+  let Lock_n = req.query.Lock_n;
+  let NodeID = req.query.NodeID;
+  let Ratting = req.query.Ratting;
+
+  let sql_update = "UPDATE Money_Control`  SET   `Lock_n` = '" + Lock_n + "',     WHERE `TagID` = '" + TagID + "'";
+  let sql_select = "SELECT * FROM `Money_Control` WHERE `TagID`='" + TagID + "' AND Lock_n < '3' AND `Passcode` = '" + Passcode + "',; "
+
   try {
 
-    let UserID = req.query.UserID;
-    let Name = req.query.Name;
-    let DateofBirth = req.query.DateofBirth;
-    let Sex = req.query.Sex;
-    let Tel = req.query.Tel;
-    let Address = req.query.Address;
+    pool.query(sql_update, (err_select, rows_select) => {
+      if (!err_select) {
+        pool.query(sql_select, (err_select, rows_select) => {
+          if (!err_select) {
+            if (rows_select[0]) {
 
-    // let TagID = req.query.TagID;
-    // let NodeID = req.query.NodeID;
+              let Amount = rows_select[0].Amount - req.query.Amount;
 
-    let sql = "UPDATE `User_Info`  SET `Name` = '" + Name + "',`DateofBirth` = '" + DateofBirth + "',`Sex` = '" + Sex + "',`Tel` = '" + Tel + "',  `Address` = '" + Address + "'  WHERE `UserID` ='" + UserID + "' ;  ";
-    // let sql2 = "INSERT INTO `log`  (`UserID`, `TagID`, `Timestamp`, `NodeID`)  VALUES  ('" + UserID + "',  '" + TagID + "',  now(),  '" + NodeID + "'); "
+              if (Amount > 0) {
+                let sql_update = "UPDATE Money_Control`  SET    `Amount` = '" + Amount + "', `Lock_n` ='" + Lock_n + "'   WHERE `TagID` = '" + TagID + "'";
+                pool.query(sql_update, (err_update, rows_update) => {
+                  if (!err_update) {
+                    let sql_log = "INSERT INTO Log`  (`TagID`,  `UserID`,  `TimeStamp`,  `NodeID`,  `Ratting`,  `Amount`)  VALUES  ('" + TagID + "',  '" + rows_select[0].UserID + "',  NOW(),  '" + NodeID + "',  '" + Ratting + "',  '" + Amount + "');";
+                    pool.query(sql_log, (err_log, rows_log) => {
+                      if (!err_log) {
+                        res.send('success');
+                      } else {
+                        res.send('error');
+                      }
+                    });
+                  } else {
+                    res.send('error');
+                  }
+                });
+              } else {
+                res.send('error');
+              }
+            } else {
+              res.send('error');
+            }
+          }
 
-    pool.query(sql, (err, rows) => {
-      if (!err) {
-        //     pool.query(sql2, (err, rows) => {
-        //       if (!err) {
-        res.send('success');
-        //      }
-        //    });
+        });
+      }
+      else {
+        res.send('error');
+      }
 
+    });
+
+  } catch (e) {
+    console.log(e);
+    res.send('error');
+  }
+});
+
+
+app.post('/ratting', (req, res) => {
+
+  let TagID = req.query.TagID;
+  let Ratting = req.query.Ratting;
+
+  let sql_select = "SELECT *  FROM `Log` WHERE `TagID`='" + TagID + "' AND TimeStamp = ( SELECT MAX(TimeStamp) FROM `Log` WHERE `TagID`='" + TagID + "' ); "
+
+  try {
+    pool.query(sql_select, (err_select, rows_select) => {
+      if (!err_select) {
+        let sql_update = "UPDATE Log`  SET   `Ratting` = '" + Ratting + "',     WHERE `LogID` = '" + rows_select[0].LogID + "'";
+        pool.query(sql_update, (err_update, rows_update) => {
+          if (!err_update) {
+            res.send(rows_select[0].Amount + 'is returned');
+          } else {
+            res.send('error');
+          }
+        });
       } else {
-        console.log(err);
+        res.send('error');
       }
     });
   } catch (e) {
+    console.log(e);
     res.send('error');
   }
-
 });
 
-
-
-app.post('/CheckOLD_UserID', (req, res) => {
-  try {
-
-    let UserID = req.query.UserID;
-
-    let sql = "SELECT * FROM `User_Info`  WHERE `UserID` ='" + UserID + "' ;  ";
-    console.log(sql);
-    pool.query(sql, (err, rows) => {
-      if (!err) {     
-        console.log(rows);
-        res.send("*************************\nข้อมูลเดิม\n*************************\nUserID : "+rows[0].UserID+"\nName : "+rows[0].Name+"\nDateofBirth : "+rows[0].DateofBirth+"\nSex : "+rows[0].Sex+"\nTel : "+rows[0].Tel+"\nAddress : "+rows[0].Address+"\n*************************");
-
-      } else {
-        console.log(err);
-        res.send("error");
-      }
-    });
-  } catch (e) {
-    res.send('error');
-  }
-
-});
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'))

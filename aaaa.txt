@@ -1,0 +1,283 @@
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2zrH5EC",3 HD
+http://ch3-33.cdn.byteark.com/live/playlist_480p/index.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2gySkHi",Ch3 SD
+http://symc-cdn03.bkk01.violin.co.th:1935/liveedge/307783286397_600/chunklist_w237161500.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2zqpNHN",3 Family
+http://symc-cdn03.bkk01.violin.co.th:1935/liveedge/307796282399_600/chunklist_w602872794.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2xVplVC",5 HD
+http://b.live1.fsanook.com:1935/tv/59b7d60b2b749/chunklist_w976020293.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2yFFrjq",7 HD
+http://edge160.bugaboo.tv/liveedgech7_partner/_definst_/smil:auto.smil/chunklist_b664000_sleng.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2gXMU5A",MCOT HD
+http://lb-media.mcot.net:1935/9mcot_edge/smil:9mcot.smil/chunklist_w723838853_b1300000.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2xVshg3",MCOT Family
+http://lb-media.mcot.net:1935/mcotfamily_edge/mcotfamily.smil/chunklist_w332871262_b2000000.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2xV24hI",NBT
+http://live.prd.go.th:1935/live/ch2_L.sdp/chunklist_w250073540.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2gto9xP",TPBS HD
+http://thaipbs-live.cdn.byteark.com/live/playlist_720p/index.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2hVq5iR",TNN24
+http://119.63.70.33/tp_tnn24.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2yEvRPf",New TV
+http://newtv.cdn.byteark.com/live/playlist_576p/index.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2xdCRQh",Spring News
+http://119.63.70.31/teleplus_pop.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2xVmPdm",Bright TV
+http://live4.netdesignhost.com/brighttvlive/brighttvlive/chunklist_w552127500.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2yGN4Gf",Voice TV
+http://symc-cdn05.bkk01.violin.co.th:1935/liveedge/308078198120_600/chunklist_w1125531616.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2gsIi6R",Nation TV
+http://symc-cdn03.bkk01.violin.co.th:1935/liveedge/308498221057_600/chunklist_w1751624082.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2yZYFDa",Workpoint
+http://symc-cdn03.bkk01.violin.co.th:1935/liveedge/292277227873_600/chunklist_w998515145.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2zquKQX",True 4U
+http://symc-cdn03.bkk01.violin.co.th:1935/liveedge/308235425316_600/chunklist_w1940342845.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2gyxMPq",NOW 26
+http://202.60.199.230/hls/th_high.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2zFUs4C",Ch 8
+http://111.223.51.3/desktop/ch8_720p/chunklist_w1794614055.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2is633f",ONE HD
+http://103.233.195.147:8081/edgelive/0x_one/chunks.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2yxk7Pl",Amarin HD
+http://112.121.152.34/stream/5195e80fe1ed0/chunklist.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2yEUcVp",Thairath HD
+http://live.thairath.co.th/trtv2/playlist_720p/index.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2yIo83p",pptv HD
+http://symc-cdn05.bkk01.violin.co.th:1935/liveedge/315182321983_600/chunklist_w1001028413.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2gspvbU",TV 24
+http://vdo.plathong.net:1935/flash2837//flash2837/chunklist_w517673240.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://bit.ly/2zrH5EC",NV loa
+http://symc-cdn01.bkk02.violin.co.th:1935/liveedge/308216215945_600/chunklist.m3u8
+ 
+#EXTINF:-1 group-title="Sports" tvg-logo="https://s17.postimg.org/40k6uwysv/supersports.png",SUPER SPORT 1 
+http://81.7.13.162/hls/ss1/index.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://s17.postimg.org/40k6uwysv/supersports.png",SUPER SPORT 2 
+http://81.7.13.162/hls/ss2/index.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://s17.postimg.org/40k6uwysv/supersports.png",SUPER SPORT 3 
+http://81.7.13.162/hls/ss3/index.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://s17.postimg.org/40k6uwysv/supersports.png",SUPER SPORT 4 
+http://81.7.13.162/hls/ss4/index.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://i.imgur.com/NSQgKH4.png",AD SPORT 1 HD
+http://adtv.ercdn.net/adsport1/adsport1_720p.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://i.imgur.com/kiRDDPC.png",AD SPORT 2 HD
+http://adtv.ercdn.net/adsport1/adsport2_720p.m3u8
+
+#EXTINF:-1 group-title="NO CATEGORY" tvg-logo="1000.png",[COLOR green][B]        เยรมันนี 1*3[/B][/COLOR]
+swisszz.blogspot.ch
+
+#EXTINF:-1,tagesschau24
+http://2.109.65.156:5603/bysid/28721
+
+#EXTINF:-1,ONE
+http://2.109.65.156:5603/bysid/28722
+
+#EXTINF:-1,arte
+http://2.109.65.156:5603/bysid/28724
+
+#EXTINF:-1,PHOENIX
+http://2.109.65.156:5603/bysid/28725
+
+#EXTINF:-1,Test-R
+http://2.109.65.156:5603/bysid/28726
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://s27.postimg.org/f1g5yfew3/eurosport.png",EUROSPORTS (Eng)
+http://esioslive6-i.akamaihd.net/hls/live/202874/AL_P_ESP1_INTER_ENG/playlist_1800.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://s27.postimg.org/f1g5yfew3/eurosport.png",EUROSPORTS (Frace)
+http://esioslive6-i.akamaihd.net/hls/live/202892/AL_P_ESP1_FR_FRA/playlist_1800.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://x.pac-12.com/sites/default/files/DigitalOpen_2015.mov.00_00_04_23.Still001__1457742519.jpg", Pac-12 National HD
+http://xrxs.net/video/live-p12netw-2328.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://x.pac-12.com/profiles/pac12/themes/pac12_foundation/images/pac12/networks/network-arizona.jpg", Pac-12 Arizona HD
+http://xrxs.net/video/live-p12ariz-2328.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://x.pac-12.com/profiles/pac12/themes/pac12_foundation/images/pac12/networks/network-losangeles.jpg", Pac-12  Los Angeles HD
+http://xrxs.net/video/live-p12losa-2328.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://x.pac-12.com/profiles/pac12/themes/pac12_foundation/images/pac12/networks/network-mountain.jpg", Pac-12 Mountain HD
+http://xrxs.net/video/live-p12moun-2328.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://x.pac-12.com/profiles/pac12/themes/pac12_foundation/images/pac12/networks/network-oregon.jpg", Pac-12 Oregon HD
+http://xrxs.net/video/live-p12oreg-2328.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://x.pac-12.com/profiles/pac12/themes/pac12_foundation/images/pac12/networks/network-washington.jpg", Pac-12 Washington HD
+http://xrxs.net/video/live-p12wash-2328.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://x.pac-12.com/profiles/pac12/themes/pac12_foundation/images/pac12/networks/network-bayarea.jpg", Pac-12 Bay Area HD
+http://xrxs.net/video/live-p12baya-2328.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://x.pac-12.com/sites/default/files/DigitalOpen_2015.mov.00_00_04_23.Still001__1457742519.jpg", Pac-12 National Full HD
+http://xrxs.net/video/live-p12netw-4728.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://x.pac-12.com/profiles/pac12/themes/pac12_foundation/images/pac12/networks/network-arizona.jpg", Pac-12 Arizona Full HD
+http://xrxs.net/video/live-p12ariz-4728.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://x.pac-12.com/profiles/pac12/themes/pac12_foundation/images/pac12/networks/network-losangeles.jpg", Pac-12  Los Angeles Full HD
+http://xrxs.net/video/live-p12losa-4728.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://x.pac-12.com/profiles/pac12/themes/pac12_foundation/images/pac12/networks/network-mountain.jpg", Pac-12 Mountain Full HD
+http://xrxs.net/video/live-p12moun-4728.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://x.pac-12.com/profiles/pac12/themes/pac12_foundation/images/pac12/networks/network-oregon.jpg", Pac-12 Oregon Full HD
+http://xrxs.net/video/live-p12oreg-4728.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://x.pac-12.com/profiles/pac12/themes/pac12_foundation/images/pac12/networks/network-washington.jpg", Pac-12 Washington Full HD
+http://xrxs.net/video/live-p12wash-4728.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://x.pac-12.com/profiles/pac12/themes/pac12_foundation/images/pac12/networks/network-bayarea.jpg", Pac-12 Bay Area Full HD
+http://xrxs.net/video/live-p12baya-4728.m3u8
+
+#EXTINF:-1 group-title="NO CATEGORY" tvg-logo="1000.png",[COLOR red][B]        Adult**หนังสำหรับผู้ใหญ่** 18+[/B][/COLOR]
+swisszz.blogspot.ch
+18++อายุต่ํากว่า18 ปีห้ามเข้าชม.คำเตือน**swisszz.
+#EXTINF:-1 group-title="Adult" tvg-logo="http://incesto.co/wp-content/uploads/2016/01/xxx-incesto.jpg",English: +15 Veronica Avluv and Dillion Harper pegging compilation
+http://4.sendvid.com/clrkl3ut.mp4
+#EXTINF:-1 group-title="Adult" tvg-logo="http://incesto.co/wp-content/uploads/2016/01/xxx-incesto.jpg",English: +18 Anal sex compilation featuring Sara Luvv and Megan Rain
+http://3.sendvid.com/mp1fwgrv.mp4
+#EXTINF:-1 group-title="Adult" tvg-logo="http://incesto.co/wp-content/uploads/2016/01/xxx-incesto.jpg",English: +18 April Brookes xxx styanulo
+http://2.sendvid.com/8tbmyh60.mp4
+#EXTINF:-1 group-title="Adult" tvg-logo="http://incesto.co/wp-content/uploads/2016/01/xxx-incesto.jpg",English: +18 Babes get all holes fucked compilation
+http://3.sendvid.com/5womkhzl.mp4
+#EXTINF:-1 group-title="Adult" tvg-logo="http://incesto.co/wp-content/uploads/2016/01/xxx-incesto.jpg",English: +18 Bang My Tranny Ass Vol 08 cena 2
+http://1.sendvid.com/vht3i547.mp4
+#EXTINF:-1 group-title="Adult" tvg-logo="http://incesto.co/wp-content/uploads/2016/01/xxx-incesto.jpg",English: +18 Bang My Tranny Ass Vol 08 cena 3
+http://4.sendvid.com/0tq4ll7o.mp4
+#EXTINF:-1 group-title="Adult" tvg-logo="http://incesto.co/wp-content/uploads/2016/01/xxx-incesto.jpg",English: +18 Bang My Tranny Ass Vol 08 cena 4
+http://3.sendvid.com/j3b0rfrm.mp4
+#EXTINF:-1 group-title="Adult" tvg-logo="http://incesto.co/wp-content/uploads/2016/01/xxx-incesto.jpg",English: +18 British teen amateur takes a thick dick POV
+http://4.sendvid.com/4gtf0c5x.mp4
+#EXTINF:-1 group-title="Adult" tvg-logo="http://incesto.co/wp-content/uploads/2016/01/xxx-incesto.jpg",English: +18 My Anal Assistant 3 Abella Danger
+http://1.sendvid.com/geh6zenb.mp4
+#EXTINF:-1 group-title="Adult" tvg-logo="http://incesto.co/wp-content/uploads/2016/01/xxx-incesto.jpg",English: +18 My Anal Assistant 3 Britney Amber
+http://2.sendvid.com/3ybs547k.mp4
+#EXTINF:-1 group-title="Adult" tvg-logo="http://incesto.co/wp-content/uploads/2016/01/xxx-incesto.jpg",English: +18 My Sexy Sister  2015 (Samantha Rone)
+http://3.sendvid.com/69mkqg5d.mp4
+#EXTINF:-1 group-title="Adult" tvg-logo="http://incesto.co/wp-content/uploads/2016/01/xxx-incesto.jpg",English: +18 Shaved asian teen anal drilled and cummed on
+http://3.sendvid.com/tjm6yfpm.mp4
+#EXTINF:-1 group-title="Adult" tvg-logo="http://incesto.co/wp-content/uploads/2016/01/xxx-incesto.jpg",English: +18 Teen Babysitter Shocking Sex Adventures 4 Jordan Kennedy
+http://3.sendvid.com/pmvxbeub.mp4
+#EXTINF:-1 group-title="Adult" tvg-logo="http://incesto.co/wp-content/uploads/2016/01/xxx-incesto.jpg",English: Play boy
+http://dgimedia.ddns.net:9898/live/nanouk2018/xpkhtdknhg/64.m3u8
+
+#EXTINF:-1 group-title="NO CATEGORY" tvg-logo="1000.png",[COLOR yellow][B]        Russian UDP IPTV 12.10.17[/B][/COLOR]
+swisszz.blogspot
+
+#EXTINF:-1,Первый канал
+http://93.120.228.141:4088/udp/225.52.221.1:5000
+
+#EXTINF:-1,Первый канал
+http://93.120.228.141:4088/udp/233.171.199.1:5000
+
+#EXTINF:-1,Первый канал +2
+http://93.120.228.141:4088/udp/233.97.176.11:5000
+
+#EXTINF:-1,Россия HD
+http://93.120.228.141:4088/udp/225.52.13.23:5000
+
+#EXTINF:-1,Pоссия 1
+http://93.120.228.141:4088/udp/233.99.61.2:5000
+
+#EXTINF:-1,Россия 1 НН
+http://93.120.228.141:4088/udp/225.52.221.11:5000
+
+#EXTINF:-1,Pоссия 1 +2
+http://93.120.228.141:4088/udp/233.97.176.12:5000
+
+#EXTINF:-1 group-title="NO CATEGORY" tvg-logo="1000.png",[COLOR pink][B]       ประเทศแอลเบเนีย**iptv 05.11.17 ผมลองแล้วดูได้ทุกช่องครับผม.[/B][/COLOR]
+swisszz.blogspot.ch
+
+#EXTINF:-1,RTK1
+http://5.135.92.130:4434/out/u/237_2.m3u8
+
+#EXTINF:-1,KLAN KOSOVA
+http://5.135.92.130:4434/out/u/281_1.m3u8
+
+#EXTINF:-1,VISION PLUS
+http://5.135.92.130:4434/out/u/436_2.m3u8
+
+#EXTINF:-1,ORA NEWS
+http://5.135.92.130:4434/out/u/252_1.m3u8
+
+#EXTINF:-1,CHANEL 1
+http://5.135.92.130:4434/out/u/305_1.m3u8
+
+#EXTINF:-1,RTSH FILM
+http://5.135.92.130:4434/out/u/360_1.m3u8
+
+#EXTINF:-1,21 POPULLORE
+http://5.135.92.130:4434/out/u/393_1.m3u8
+
+#EXTINF:-1,DUKAGJINI
+http://5.135.92.130:4434/out/u/336_1.m3u8
+
+#EXTINF:-1,TIRANA TV
+http://5.135.92.130:4434/out/u/363_1.m3u8
+
+#EXTINF:-1,BBF
+http://5.135.92.130:4434/out/u/292_1.m3u8
+
+#EXTINF:-1 group-title="NO CATEGORY" tvg-logo="1000.png",[COLOR blue][B] *swisszz*      SKYNET SPORTS iptv[/B][/COLOR]
+swisszz.blogspot.ch
+
+#EXTINF:-1  group-title="Sports",SKYNET SPORTS HD
+http://183.88.212.205:8010/play/a00r
+
+#EXTINF:-1  group-title="Sports",SKYNET SPORTS-1
+http://183.88.212.205:8010/play/a02j
+
+#EXTINF:-1  group-title="Sports",SKYNET SPORTS-2
+http://183.88.212.205:8010/play/a02k
+
+#EXTINF:-1  group-title="Sports",SKYNET SPORTS-3
+http://183.88.212.205:8010/play/a02l
+
+#EXTINF:-1  group-title="Sports",SKYNET SPORTS-4
+http://183.88.212.205:8010/play/a00a
+
+#EXTINF:-1  group-title="Sports",SKYNET SPORTS-5
+http://183.88.212.205:8010/play/a00b
+
+#EXTINF:-1  group-title="Sports",SKYNET SPORTS-6
+http://183.88.212.205:8010/play/a00c
+
+#EXTINF:-1  group-title="Sports",FOX SPORTS 1
+http://183.88.212.205:8010/play/a02m
+
+#EXTINF:-1  group-title="Sports",FOX SPORTS 2
+http://183.88.212.205:8010/play/a02n
+
+#EXTINF:-1  group-title="Sports",FOX SPORTS 3
+http://183.88.212.205:8010/play/a02o
+
+#EXTINF:-1  group-title="Sports",EURO SPORTS
+http://183.88.212.205:8010/play/a00d
