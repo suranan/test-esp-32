@@ -411,7 +411,7 @@ app.post('/api/rating', (req, res) => {
   try {
     pool.query(sql_select, (err_select, rows_select) => {
       if (!err_select) {
-        if (err_select[0]) {
+        if (rows_select[0]) {
           let sql_update = "UPDATE `Log`  SET   `Ratting` = '" + Rating + "'     WHERE `LogID` = '" + rows_select[0].LogID + "'";
           console.log(sql_update);
           pool.query(sql_update, (err_update, rows_update) => {
