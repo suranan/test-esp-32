@@ -1,0 +1,71 @@
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <!-- Logo -->
+                <div class="logo">
+                    <h1><a>Recommendation</a></h1>
+                </div>
+            </div>
+            <div class="col-md-7">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-content">
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <div class="content-box-large" [hidden]="success">
+                <div class="panel-heading">
+                    <div class="panel-title">Recommendation</div>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let row of rows">
+                                <td>{{row.NodeID}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <div class="container">
+
+        <div class="copy text-center">
+            Copyright 2014 <a href='#'>Website</a>
+        </div>
+
+    </div>
+</footer>

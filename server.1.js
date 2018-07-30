@@ -215,58 +215,17 @@ app.post('/api/check-pin', (req, res) => {
 
   let TagID = req.query.TagID;
   let Passcode = req.query.Passcode;
-  let Lock_n;
 
   let sql_count = "SELECT count(1) as count  FROM `Money_Control` WHERE `TagID`='" + TagID + "' AND `Passcode`='" + Passcode + "'; "
-  let sql_select = "SELECT *  FROM `Money_Control` WHERE `TagID`='" + TagID + "'; "
+  // let sql_select = "SELECT *  FROM `Money_Control` WHERE `TagID`='" + TagID + "'; "
+
   try {
     pool.query(sql_count, (err_count, rows_count) => {
       if (!err_count) {
-
         if (rows_count[0].count != '0') {
-          console.log('count 1');
-          pool.query(sql_select, (err_select, rows_select) => {
-            if (!err_select) {
-              if (parseInt(rows_select[0].Lock_n) < 3) {
-                console.log('T');
-                res.send('T');
-              } else {
-                console.log('L');
-                res.send('L');
-              }
-            } else {
-              res.send('F');
-            }
-          });
+          res.send('T');
         } else {
-          console.log('count 0');
-          pool.query(sql_select, (err_select, rows_select) => {
-
-            console.log(sql_select);
-            if (!err_select) {
-              if (parseInt(rows_select[0].Lock_n) < 3) {
-
-                console.log(rows_select);
-                Lock_n = parseInt(rows_select[0].Lock_n) + 1;
-                let sql_update = "UPDATE `Money_Control`  SET   `Lock_n` = '" + Lock_n + "' WHERE `TagID` = '" + TagID + "'";
-
-                console.log(sql_update);
-
-                pool.query(sql_update, (err_update, rows_update) => {
-                  if (!err_update) {
-                    res.send('F');
-                  } else {
-                    res.send('F');
-                  }
-                });
-              } else {
-                res.send('L');
-              }
-            } else {
-              console.log(err_select);
-              res.send('F');
-            }
-          });
+          res.send('F');
         }
       } else {
         console.log(sql_count);
@@ -365,8 +324,8 @@ app.post('/api/pay', (req, res) => {
         if (rows_select[0]) {
 
           Amount = parseInt(rows_select[0].Amount) - parseInt(req.query.Amount);
-          console.log(Amount);
-          if (Amount >= 0) {
+
+          if (Amount > 0) {
             let sql_update = "UPDATE `Money_Control`  SET    `Amount` = '" + Amount + "'  WHERE `TagID` = '" + TagID + "'";
             pool.query(sql_update, (err_update, rows_update) => {
               if (!err_update) {
@@ -383,8 +342,7 @@ app.post('/api/pay', (req, res) => {
               }
             });
           } else {
-            console.log('E')
-            res.send('E');
+            res.send('error');
           }
         } else {
           res.send('error');
@@ -401,29 +359,24 @@ app.post('/api/pay', (req, res) => {
 });
 
 
-app.post('/api/rating', (req, res) => {
+app.post('/api/ratting', (req, res) => {
 
   let TagID = req.query.TagID;
-  let Rating = req.query.Rating;
-  let NodeID = req.query.NodeID;
+  let Ratting = req.query.Ratting;
 
-  let sql_select = "SELECT *  FROM `Log` WHERE `TagID`='" + TagID + "' AND TimeStamp = ( SELECT MAX(TimeStamp) FROM `Log` WHERE `TagID`='" + TagID + "' AND NodeID = '" + NodeID + "' ); "
+  let sql_select = "SELECT *  FROM `Log` WHERE `TagID`='" + TagID + "' AND TimeStamp = ( SELECT MAX(TimeStamp) FROM `Log` WHERE `TagID`='" + TagID + "' ); "
+
   try {
     pool.query(sql_select, (err_select, rows_select) => {
       if (!err_select) {
-        if (err_select[0]) {
-          let sql_update = "UPDATE `Log`  SET   `Ratting` = '" + Rating + "'     WHERE `LogID` = '" + rows_select[0].LogID + "'";
-          console.log(sql_update);
-          pool.query(sql_update, (err_update, rows_update) => {
-            if (!err_update) {
-              res.send('success');
-            } else {
-              res.send('error');
-            }
-          });
-        } else {
-          res.send('error');
-        }
+        let sql_update = "UPDATE Log`  SET   `Ratting` = '" + Ratting + "',     WHERE `LogID` = '" + rows_select[0].LogID + "'";
+        pool.query(sql_update, (err_update, rows_update) => {
+          if (!err_update) {
+            res.send(rows_select[0].Amount + 'is returned');
+          } else {
+            res.send('error');
+          }
+        });
       } else {
         res.send('error');
       }
@@ -456,33 +409,6 @@ app.post('/api/create-user', (req, res) => {
         console.log(err_insert);
         console.log(sql_insert);
         res.send({ 'success': false, 'massage': 'not success' });
-      }
-    });
-  } catch (e) {
-    console.log(e);
-    res.send('error');
-  }
-});
-
-
-app.post('/api/check-bl', (req, res) => {
-
-  let TagID = req.query.TagID;
-
-
-  let sql_count = "SELECT *  FROM `Money_Control` WHERE `TagID`='" + TagID + "'; "
-
-  try {
-    pool.query(sql_count, (err_count, rows_count) => {
-      if (!err_count) {
-        if (rows_count[0]) {
-          let aa = String(rows_count[0].Amount);
-          res.send(aa);
-        } else {
-          res.send('error');
-        }
-      } else {
-        res.send('error');
       }
     });
   } catch (e) {
@@ -534,24 +460,6 @@ app.post('/api/update-user', (req, res) => {
     pool.query(sql_update, (err_update, rows_update) => {
       if (!err_update) {
         res.send({ 'success': true, 'massage': 'success' });
-      } else {
-        res.send({ 'success': false, 'massage': 'not success' });
-      }
-    });
-  } catch (e) {
-    console.log(e);
-    res.send('error');
-  }
-});
-
-app.post('/api/get-rec', (req, res) => {
-
-  let sql_update = "SELECT NodeID,count(1) as Qty  from Log  where NodeID<>'node00'  and `TimeStamp` >= DATE_ADD(now(), INTERVAL -5 MINUTE)  group by NodeID  order by count(1) asc;";
-
-  try {
-    pool.query(sql_update, (err_update, rows_update) => {
-      if (!err_update) {
-        res.send({ 'success': true, 'massage': rows_update });
       } else {
         res.send({ 'success': false, 'massage': 'not success' });
       }

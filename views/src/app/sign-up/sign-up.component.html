@@ -1,0 +1,129 @@
+<div class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <!-- Logo -->
+        <div class="logo">
+          <h1><a>Sign Up</a></h1>
+        </div>
+      </div>
+      <div class="col-md-7">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="row">
+
+    <div class="col-md-12">
+
+      <div class="content-box-large" [hidden]="success">
+        <div class="panel-heading">
+          <div class="panel-title">Sign Form</div>
+        </div>
+        <div class="panel-body">
+          <form class="form-horizontal" role="form" [formGroup]="form">
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">username</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control"
+                  formControlName="username">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control"
+                  formControlName="Name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">Sex</label>
+              <div class="col-sm-10">
+                <select class="form-control" formControlName="Sex">
+                  <option value="M">Male</option>
+                  <option value="F">Femail</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">Date of
+                Birth</label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control"
+                  formControlName="DateofBirth">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">tel.
+              </label>
+              <div class="col-sm-10">
+                <input type="number" class="form-control"
+                  formControlName="Tel">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">address</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" formControlName="Address"></textarea>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button class="btn btn-primary" [disabled]="!form.valid"
+                  (click)="onSubmit()">Sign Up</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="content-box-large" [hidden]="!success">
+        <div class="panel-heading">
+          <div class="panel-title">Success</div>          
+        </div>
+        <div class="panel-body">
+            <button class="btn btn-primary" [disabled]="!form.valid"
+            (click)="onReset()">Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+  <div class="container">
+
+    <div class="copy text-center">
+      Copyright 2014 <a href='#'>Website</a>
+    </div>
+
+  </div>
+</footer>
