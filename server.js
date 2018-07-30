@@ -590,7 +590,7 @@ app.post('/api/get-rec1', (req, res) => {
 
 app.post('/api/now', (req, res) => {
 
-  let sql_update = 'SELECT DATE_FORMAT(NOW(),"%Y%m%d %H:%i:%s") as now';
+  let sql_update = 'SELECT DATE_FORMAT(NOW(),"%Y/%m/%d %H:%i:%s") as nowgit add .';
 
   try {
     pool.query(sql_update, (err_update, rows_update) => {
