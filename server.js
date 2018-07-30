@@ -551,9 +551,55 @@ app.post('/api/get-rec', (req, res) => {
   try {
     pool.query(sql_update, (err_update, rows_update) => {
       if (!err_update) {
-        res.send({ 'success': true, 'massage': rows_update });
+        if (rows_update[0] != undefined) {
+          res.send({ 'success': true, 'massage': rows_update });
+        } else {
+          res.send({ 'success': true, 'massage': [] });
+        }
       } else {
         res.send({ 'success': false, 'massage': 'not success' });
+      }
+    });
+  } catch (e) {
+    console.log(e);
+    res.send('error');
+  }
+});
+
+app.post('/api/get-rec1', (req, res) => {
+
+  let sql_update = "SELECT NodeID,count(1) as Qty  from Log  where NodeID<>'node00'  and `TimeStamp` >= DATE_ADD(now(), INTERVAL -5 MINUTE)  group by NodeID  order by count(1) asc limit 1;";
+
+  try {
+    pool.query(sql_update, (err_update, rows_update) => {
+      if (!err_update) {
+        if (typeof (rows_update[0].NodeID) != 'undefined') {
+          res.send(rows_update[0].NodeID);
+        } else {
+          res.send('');
+        }
+      } else {
+        res.send('error');
+      }
+    });
+  } catch (e) {
+    console.log(e);
+    res.send('error');
+  }
+});
+
+app.post('/api/now', (req, res) => {
+
+  let sql_update = 'SELECT DATE_FORMAT(NOW(),"%Y%m%d %H:%i:%s") as now';
+
+  try {
+    pool.query(sql_update, (err_update, rows_update) => {
+      if (!err_update) {
+      
+          res.send(rows_update[0].now);
+      
+      } else {
+        res.send('error');
       }
     });
   } catch (e) {
