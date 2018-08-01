@@ -22,7 +22,7 @@ export class UserService {
     params.append('Tel', obj.Tel)
     params.append('Address', obj.Address)
 
-    let url = 'http://localhost:3000/api/create-user?Name=' + obj.Name + '&DateofBirth=' + obj.DateofBirth + '&Sex=' + obj.Sex + '&Tel=' + obj.Tel + '&Address=' + obj.Address+ '&UserID=' + obj.username;
+    let url = '/api/create-user?Name=' + obj.Name + '&DateofBirth=' + obj.DateofBirth + '&Sex=' + obj.Sex + '&Tel=' + obj.Tel + '&Address=' + obj.Address+ '&UserID=' + obj.username;
     return this._http.post(url, {}).pipe(map((data) => data.json()), catchError(error => {
       return throwError('Something went wrong!')
     }))
@@ -40,7 +40,7 @@ export class UserService {
     params.append('Tel', obj.Tel)
     params.append('Address', obj.Address)
 
-    let url = 'http://localhost:3000/api/update-user?Name=' + obj.Name + '&DateofBirth=' + obj.DateofBirth + '&Sex=' + obj.Sex + '&Tel=' + obj.Tel + '&Address=' + obj.Address+ '&UserID=' + obj.username;
+    let url = '/api/update-user?Name=' + obj.Name + '&DateofBirth=' + obj.DateofBirth + '&Sex=' + obj.Sex + '&Tel=' + obj.Tel + '&Address=' + obj.Address+ '&UserID=' + obj.username;
     return this._http.post(url, {}).pipe(map((data) => data.json()), catchError(error => {
       return throwError('Something went wrong!')
     }))
@@ -53,7 +53,7 @@ export class UserService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    let url = 'http://localhost:3000/api/check-user?UserID=' + obj.username;
+    let url = '/api/check-user?UserID=' + obj.username;
     return this._http.post(url, {}).pipe(map((data) => data.json()), catchError(error => {
       return throwError('Something went wrong!')
     }))
@@ -65,7 +65,7 @@ export class UserService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    let url = 'http://localhost:3000/api/get-rec';
+    let url = '/api/get-rec';
     return this._http.post(url, {}).pipe(map((data) => data.json()), catchError(error => {
       return throwError('Something went wrong!')
     }))

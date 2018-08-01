@@ -4,6 +4,7 @@ var cors = require('cors');
 var AWS = require('aws-sdk');
 const morgan = require('morgan');
 var mysql = require('mysql');
+const path = require('path');
 
 const pool = mysql.createPool({
   host: "ec2-13-250-39-130.ap-southeast-1.compute.amazonaws.com",
@@ -27,7 +28,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => res.send('Hello World!'));
+//app.get('/', (req, res) => res.send('Hello World!'));
 
 app.post('/api/topup', (req, res) => {
 
@@ -595,9 +596,9 @@ app.post('/api/now', (req, res) => {
   try {
     pool.query(sql_update, (err_update, rows_update) => {
       if (!err_update) {
-      
-          res.send(rows_update[0].now);
-      
+
+        res.send(rows_update[0].now);
+
       } else {
         res.send('error');
       }
@@ -607,5 +608,12 @@ app.post('/api/now', (req, res) => {
     res.send('error');
   }
 });
+
+app.use(express.static(path.join(__dirname, './views/dist/views')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/dist/views/index.html'));
+});
+
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
