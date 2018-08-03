@@ -569,8 +569,9 @@ app.post('/api/get-rec', (req, res) => {
 
 app.post('/api/get-rec1', (req, res) => {
 
+  // let sql_update = "SELECT NodeID,count(1) as Qty  from Log  where NodeID<>'node00'  and `TimeStamp` >= DATE_ADD(now(), INTERVAL -5 MINUTE)  group by NodeID  order by count(1) asc limit 1;";
   let sql_update = "SELECT NodeID,count(1) as Qty  from Log  where NodeID<>'node00'  and `TimeStamp` >= DATE_ADD(now(), INTERVAL -5 MINUTE)  group by NodeID  order by count(1) asc limit 1;";
-
+"select nodeID,count(1) FROM Log where DATE(`TimeStamp`) = CURDATE() and nodeID <> 'node00' group by nodeID order by count(1) LIMIT 1";
   try {
     pool.query(sql_update, (err_update, rows_update) => {
       if (!err_update) {
