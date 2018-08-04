@@ -569,10 +569,10 @@ app.post('/api/get-rec', (req, res) => {
 
 app.post('/api/get-rec1', (req, res) => {
 
-  // let sql_update = "SELECT NodeID,count(1) as Qty  from Log  where NodeID<>'node00'  and `TimeStamp` >= DATE_ADD(now(), INTERVAL -5 MINUTE)  group by NodeID  order by count(1) asc limit 1;";
-  let sql_update = "SELECT NodeID,count(1) as Qty  from Log where DATE(`TimeStamp`) = CURDATE() and nodeID <> 'node00' group by nodeID order by count(1) LIMIT 1";
+  let sql_update = "select a.NodeID,count(1) as QTY FROM Log as a LEFT JOIN Node_Name as b  ON a.NodeID = b.Node_ID  where DATE(a.`TimeStamp`) = CURDATE() and a.nodeID <> 'node00'  and (     select count(DISTINCT NodeID)      FROM Log where DATE(`TimeStamp`) = CURDATE() and nodeID <> 'node00'     )=3  group by a.nodeID,b.Node_Price  order by count(1),b.Node_Price desc  LIMIT 1";
   try {
     pool.query(sql_update, (err_update, rows_update) => {
+      console.log(rows_update);
       if (!err_update) {
         if (typeof (rows_update[0].NodeID) != 'undefined') {
           res.send(rows_update[0].NodeID);
