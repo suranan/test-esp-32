@@ -612,8 +612,7 @@ app.post('/api/reset', (req, res) => {
 
   let TagID = req.query.TagID;
 
-  let sql_update = "UPDATE Money_Control`  SET  `Lock_n` = '0'  WHERE `TagID` = '" + TagID + "'";
-
+  let sql_update = "UPDATE `Money_Control`  SET  `Lock_n` = '0'  WHERE `TagID` = '" + TagID + "'";
   try {
     pool.query(sql_update, (err_update, rows_update) => {
       if (!err_update) {
