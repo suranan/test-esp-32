@@ -609,6 +609,28 @@ app.post('/api/now', (req, res) => {
   }
 });
 
+app.post('/api/reset', (req, res) => {
+
+  let TagID = req.query.TagID;
+
+  let sql_update = "UPDATE Money_Control`  SET  `Lock_n` = '0'  WHERE `TagID` = '" + TagID + "'";
+
+  try {
+    pool.query(sql_update, (err_update, rows_update) => {
+      if (!err_update) {
+
+        res.send('success');
+
+      } else {
+        res.send('error');
+      }
+    });
+  } catch (e) {
+    console.log(e);
+    res.send('error');
+  }
+});
+
 app.use(express.static(path.join(__dirname, './views/dist/views')));
 
 app.get('*', (req, res) => {
