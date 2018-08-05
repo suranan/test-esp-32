@@ -577,15 +577,14 @@ app.post('/api/get-rec1', (req, res) => {
         if (typeof (rows_update[0].NodeID) != 'undefined') {
           res.send(rows_update[0].NodeID);
         } else {
-          res.send('');
+         throw 'NodeID is undefined';
         }
       } else {
-        res.send('error');
+       throw err_update;
       }
     });
   } catch (e) {
-    console.log(e);
-    res.send('error');
+    res.send('');
   }
 });
 
